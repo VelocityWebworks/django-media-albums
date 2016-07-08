@@ -308,6 +308,8 @@ class Photo(Upload):
         if exif_data:
             orientation = exif_data.get(0x0112)
 
+            rotated_img = None
+
             if orientation == 2:
                 rotated_img = img.transpose(Image.FLIP_LEFT_RIGHT)
             elif orientation == 3:
@@ -323,7 +325,11 @@ class Photo(Upload):
             elif orientation == 8:
                 rotated_img = img.rotate(90)
 
-            rotated_img.save(self.image.file.name, overwrite=True)
+            if rotated_img:
+                try:
+                    rotated_img.save(self.image.file.name, overwrite=True)
+                except IOError:
+                    pass
 
     def get_absolute_url(self):
         try:
