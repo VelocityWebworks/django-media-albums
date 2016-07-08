@@ -1,0 +1,5 @@
+{% load bootstrap_pagination %}
+
+{% if is_paginated %}
+  {% bootstrap_paginate page_obj %}
+{% endif %}

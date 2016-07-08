@@ -1,0 +1,66 @@
+.media-albums-album-row,
+.media-albums-item-row {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.media-albums-album-col,
+.media-albums-item-col {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.media-albums-album-col .thumbnail,
+.media-albums-item-col .thumbnail {
+  -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+      flex: 1 1 auto;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+      flex-direction: column;
+  -webkit-justify-content: center;
+        -ms-flex-pack: center;
+      justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+  overflow: hidden;
+}
+
+.media-albums-album-photo img,
+.media-albums-item-photo img {
+  max-width: 100%;
+}
+
+.media-albums-album-description {
+  margin-bottom: 10px;
+}
+
+.media-albums-photo img,
+.media-albums-cover-art,
+.media-albums-audio audio,
+.media-albums-video video {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.media-albums-audio audio {
+  width: 550px;
+}
+
+.media-albums-caption {
+  margin-top: 10px;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .media-albums-album-row,
+  .media-albums-item-row {
+    display: block;
+  }
+}

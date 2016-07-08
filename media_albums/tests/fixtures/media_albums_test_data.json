@@ -1,0 +1,681 @@
+[
+{
+  "fields": {
+    "name": "Empty Album",
+    "slug": "empty-album",
+    "description": "",
+    "visibility": "public",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0
+  },
+  "model": "media_albums.album",
+  "pk": 1
+},
+{
+  "fields": {
+    "name": "Cat Photos",
+    "slug": "cat-photos",
+    "description": "This is the description for the \"Cat Photos\" album.\r\n\r\nIsn't this a great description?",
+    "visibility": "public",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0
+  },
+  "model": "media_albums.album",
+  "pk": 2
+},
+{
+  "fields": {
+    "name": "Dog Photos",
+    "slug": "dog-photos",
+    "description": "",
+    "visibility": "public",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0
+  },
+  "model": "media_albums.album",
+  "pk": 3
+},
+{
+  "fields": {
+    "name": "Audio Files",
+    "slug": "audio-files",
+    "description": "",
+    "visibility": "public",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 1
+  },
+  "model": "media_albums.album",
+  "pk": 4
+},
+{
+  "fields": {
+    "name": "Video Files",
+    "slug": "video-files",
+    "description": "",
+    "visibility": "public",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 1
+  },
+  "model": "media_albums.album",
+  "pk": 5
+},
+{
+  "fields": {
+    "name": "Funny Animated GIFs",
+    "slug": "funny-animated-gifs",
+    "description": "",
+    "visibility": "unlisted",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0
+  },
+  "model": "media_albums.album",
+  "pk": 6
+},
+{
+  "fields": {
+    "name": "Miscellaneous",
+    "slug": "miscellaneous",
+    "description": "",
+    "visibility": "private",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0
+  },
+  "model": "media_albums.album",
+  "pk": 7
+},
+{
+  "fields": {
+    "name": "User Uploaded Photos Pending Approval",
+    "slug": "user-uploaded-photos-pending-approval",
+    "description": "",
+    "visibility": "private",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 999
+  },
+  "model": "media_albums.album",
+  "pk": 8
+},
+{
+  "fields": {
+    "album": 4,
+    "name": "Awesome",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0,
+    "caption": "Cover art from https://commons.wikimedia.org/wiki/File:Audacity-Screenshot.jpg",
+    "description": "If you listen to the audio file, the man who is speaking will tell you which format is playing.\r\n\r\nThe man who is speaking also goes into details about the format that's playing.",
+    "audio_file_1": "http://hpr.dogphilosophy.net/test/ogg.ogg",
+    "audio_file_2": "http://hpr.dogphilosophy.net/test/mp3.mp3",
+    "cover_art": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Audacity-Screenshot.jpg",
+    "album_photo": true
+  },
+  "model": "media_albums.audiofile",
+  "pk": 1
+},
+{
+  "fields": {
+    "album": 4,
+    "name": "Brilliant",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0,
+    "caption": "",
+    "description": "",
+    "audio_file_1": "http://www.w3schools.com/html/horse.ogg",
+    "audio_file_2": "http://www.w3schools.com/html/horse.mp3",
+    "cover_art": "https://upload.wikimedia.org/wikipedia/commons/2/21/Palomino_Horse.jpg",
+    "album_photo": false
+  },
+  "model": "media_albums.audiofile",
+  "pk": 2
+},
+{
+  "fields": {
+    "album": 4,
+    "name": "Cool",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0,
+    "caption": "",
+    "description": "",
+    "audio_file_1": "http://www.html5tutorial.info/media/vincent.ogg",
+    "audio_file_2": "http://www.html5tutorial.info/media/vincent.mp3",
+    "cover_art": "https://upload.wikimedia.org/wikipedia/commons/c/cd/VanGogh-starry_night.jpg",
+    "album_photo": false
+  },
+  "model": "media_albums.audiofile",
+  "pk": 3
+},
+{
+  "fields": {
+    "album": 7,
+    "name": "Some Audio File",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0,
+    "caption": "",
+    "description": "",
+    "audio_file_1": "http://demos.w3avenue.com/html5-unleashed-tips-tricks-and-techniques/demo-audio.ogg",
+    "audio_file_2": "",
+    "cover_art": "",
+    "album_photo": false
+  },
+  "model": "media_albums.audiofile",
+  "pk": 4
+},
+{
+  "fields": {
+    "album": 2,
+    "description": "",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0,
+    "image": "http://i.imgur.com/WIInzxA.jpg",
+    "caption": "This cat just met a dog.",
+    "album_photo": true,
+    "name": "Afraid"
+  },
+  "model": "media_albums.photo",
+  "pk": 1
+},
+{
+  "fields": {
+    "album": 2,
+    "description": "",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0,
+    "image": "http://i.imgur.com/rpENzfm.jpg",
+    "caption": "",
+    "album_photo": false,
+    "name": "Beautiful"
+  },
+  "model": "media_albums.photo",
+  "pk": 2
+},
+{
+  "fields": {
+    "album": 2,
+    "description": "",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0,
+    "image": "http://i.imgur.com/zi33a7V.jpg",
+    "caption": "",
+    "album_photo": false,
+    "name": "Couch"
+  },
+  "model": "media_albums.photo",
+  "pk": 3
+},
+{
+  "fields": {
+    "album": 2,
+    "description": "",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0,
+    "image": "http://i.imgur.com/WukfMFB.jpg",
+    "caption": "",
+    "album_photo": false,
+    "name": "Dapper"
+  },
+  "model": "media_albums.photo",
+  "pk": 4
+},
+{
+  "fields": {
+    "album": 2,
+    "description": "",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0,
+    "image": "http://i.imgur.com/Z4kbGwZ.jpg",
+    "caption": "",
+    "album_photo": false,
+    "name": "Entranced"
+  },
+  "model": "media_albums.photo",
+  "pk": 5
+},
+{
+  "fields": {
+    "album": 2,
+    "description": "",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0,
+    "image": "http://i.imgur.com/a0n9svT.jpg",
+    "caption": "",
+    "album_photo": false,
+    "name": "Firefox"
+  },
+  "model": "media_albums.photo",
+  "pk": 6
+},
+{
+  "fields": {
+    "album": 2,
+    "description": "",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0,
+    "image": "http://i.imgur.com/fg6rv2y.jpg",
+    "caption": "",
+    "album_photo": false,
+    "name": "Goofy"
+  },
+  "model": "media_albums.photo",
+  "pk": 7
+},
+{
+  "fields": {
+    "album": 2,
+    "description": "",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0,
+    "image": "http://i.imgur.com/GNmdHkF.jpg",
+    "caption": "",
+    "album_photo": false,
+    "name": "Halloween"
+  },
+  "model": "media_albums.photo",
+  "pk": 8
+},
+{
+  "fields": {
+    "album": 2,
+    "description": "",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0,
+    "image": "http://i.imgur.com/KEgjLp0.jpg",
+    "caption": "",
+    "album_photo": false,
+    "name": "Indifferent"
+  },
+  "model": "media_albums.photo",
+  "pk": 9
+},
+{
+  "fields": {
+    "album": 2,
+    "description": "",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0,
+    "image": "http://i.imgur.com/QB3YVSY.jpg",
+    "caption": "",
+    "album_photo": false,
+    "name": "Joyful"
+  },
+  "model": "media_albums.photo",
+  "pk": 10
+},
+{
+  "fields": {
+    "album": 3,
+    "description": "",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0,
+    "image": "http://i.imgur.com/kAnQOQL.jpg",
+    "caption": "",
+    "album_photo": false,
+    "name": "Adorable"
+  },
+  "model": "media_albums.photo",
+  "pk": 11
+},
+{
+  "fields": {
+    "album": 3,
+    "description": "",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0,
+    "image": "http://i.imgur.com/80u0o4Z.jpg",
+    "caption": "",
+    "album_photo": false,
+    "name": "Birthday"
+  },
+  "model": "media_albums.photo",
+  "pk": 12
+},
+{
+  "fields": {
+    "album": 3,
+    "description": "",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0,
+    "image": "http://i.imgur.com/rgmPijZ.jpg",
+    "caption": "",
+    "album_photo": false,
+    "name": "Closeup"
+  },
+  "model": "media_albums.photo",
+  "pk": 13
+},
+{
+  "fields": {
+    "album": 3,
+    "description": "",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0,
+    "image": "http://i.imgur.com/kyFbunw.jpg",
+    "caption": "",
+    "album_photo": false,
+    "name": "Delighted"
+  },
+  "model": "media_albums.photo",
+  "pk": 14
+},
+{
+  "fields": {
+    "album": 3,
+    "description": "",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0,
+    "image": "http://i.imgur.com/zJ38KNr.jpg",
+    "caption": "",
+    "album_photo": true,
+    "name": "Elegant"
+  },
+  "model": "media_albums.photo",
+  "pk": 15
+},
+{
+  "fields": {
+    "album": 3,
+    "description": "",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0,
+    "image": "http://i.imgur.com/lROEAA9.jpg",
+    "caption": "",
+    "album_photo": false,
+    "name": "Family"
+  },
+  "model": "media_albums.photo",
+  "pk": 16
+},
+{
+  "fields": {
+    "album": 3,
+    "description": "",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0,
+    "image": "http://i.imgur.com/XZaneDU.jpg",
+    "caption": "",
+    "album_photo": false,
+    "name": "Goofy"
+  },
+  "model": "media_albums.photo",
+  "pk": 17
+},
+{
+  "fields": {
+    "album": 3,
+    "description": "",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0,
+    "image": "http://i.imgur.com/kZFwEhS.jpg",
+    "caption": "",
+    "album_photo": false,
+    "name": "Hilarious"
+  },
+  "model": "media_albums.photo",
+  "pk": 18
+},
+{
+  "fields": {
+    "album": 3,
+    "description": "",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0,
+    "image": "http://i.imgur.com/rMN2kIo.jpg",
+    "caption": "",
+    "album_photo": false,
+    "name": "Interested"
+  },
+  "model": "media_albums.photo",
+  "pk": 19
+},
+{
+  "fields": {
+    "album": 3,
+    "description": "",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0,
+    "image": "http://i.imgur.com/lF44X8n.png",
+    "caption": "",
+    "album_photo": false,
+    "name": "Joyful"
+  },
+  "model": "media_albums.photo",
+  "pk": 20
+},
+{
+  "fields": {
+    "album": 3,
+    "description": "",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0,
+    "image": "http://i.imgur.com/lBNJkgK.jpg",
+    "caption": "",
+    "album_photo": false,
+    "name": "Keen"
+  },
+  "model": "media_albums.photo",
+  "pk": 21
+},
+{
+  "fields": {
+    "album": 3,
+    "description": "",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0,
+    "image": "http://i.imgur.com/vbLXEPA.jpg",
+    "caption": "",
+    "album_photo": false,
+    "name": "Long Fur"
+  },
+  "model": "media_albums.photo",
+  "pk": 22
+},
+{
+  "fields": {
+    "album": 3,
+    "description": "",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0,
+    "image": "http://i.imgur.com/HY3dIEc.jpg",
+    "caption": "",
+    "album_photo": false,
+    "name": "Muddy"
+  },
+  "model": "media_albums.photo",
+  "pk": 23
+},
+{
+  "fields": {
+    "album": 3,
+    "description": "",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0,
+    "image": "http://i.imgur.com/BPvWdpK.jpg",
+    "caption": "",
+    "album_photo": false,
+    "name": "Naptime"
+  },
+  "model": "media_albums.photo",
+  "pk": 24
+},
+{
+  "fields": {
+    "album": 3,
+    "description": "",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0,
+    "image": "http://i.imgur.com/JVmuzIx.jpg",
+    "caption": "",
+    "album_photo": false,
+    "name": "Ocean"
+  },
+  "model": "media_albums.photo",
+  "pk": 25
+},
+{
+  "fields": {
+    "album": 6,
+    "description": "",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0,
+    "image": "http://i.imgur.com/OA9zMjV.gif",
+    "caption": "",
+    "album_photo": false,
+    "name": "Dog"
+  },
+  "model": "media_albums.photo",
+  "pk": 26
+},
+{
+  "fields": {
+    "album": 6,
+    "description": "",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0,
+    "image": "http://i.imgur.com/a56jVOg.gif",
+    "caption": "",
+    "album_photo": false,
+    "name": "Surprise!"
+  },
+  "model": "media_albums.photo",
+  "pk": 27
+},
+{
+  "fields": {
+    "album": 6,
+    "description": "",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0,
+    "image": "http://i.imgur.com/DNSGZfK.gif",
+    "caption": "That's a lot of microphones!",
+    "album_photo": false,
+    "name": "Microphones"
+  },
+  "model": "media_albums.photo",
+  "pk": 28
+},
+{
+  "fields": {
+    "album": 6,
+    "description": "",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0,
+    "image": "http://i.imgur.com/6TlEJap.gif",
+    "caption": "",
+    "album_photo": false,
+    "name": "Goal!"
+  },
+  "model": "media_albums.photo",
+  "pk": 29
+},
+{
+  "fields": {
+    "album": 6,
+    "description": "",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0,
+    "image": "http://i.imgur.com/qxxoNP6.gif",
+    "caption": "",
+    "album_photo": true,
+    "name": "Picture Time!"
+  },
+  "model": "media_albums.photo",
+  "pk": 30
+},
+{
+  "fields": {
+    "album": 7,
+    "description": "",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0,
+    "image": "http://i.imgur.com/L9K0zYy.jpg",
+    "caption": "",
+    "album_photo": true,
+    "name": "Some Photo"
+  },
+  "model": "media_albums.photo",
+  "pk": 31
+},
+{
+  "fields": {
+    "album": 8,
+    "description": "",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0,
+    "image": "http://i.imgur.com/erJ6t2u.jpg",
+    "caption": "",
+    "album_photo": false,
+    "name": "User Uploaded Photo"
+  },
+  "model": "media_albums.photo",
+  "pk": 32
+},
+{
+  "model": "media_albums.userphoto",
+  "pk": 32,
+  "fields": {
+    "added_by": null
+  }
+},
+{
+  "fields": {
+    "album": 5,
+    "name": "Appealing",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0,
+    "caption": "Read more about Big Buck Bunny here: https://peach.blender.org/about/",
+    "description": "If you watch the video file, the bottom right corner will tell you which format is playing.",
+    "video_file_1": "http://clips.vorwaerts-gmbh.de/VfE_html5.mp4",
+    "video_file_2": "http://clips.vorwaerts-gmbh.de/VfE.webm",
+    "poster": "https://upload.wikimedia.org/wikipedia/commons/7/70/Big.Buck.Bunny.-.Opening.Screen.png",
+    "album_photo": true
+  },
+  "model": "media_albums.videofile",
+  "pk": 1
+},
+{
+  "fields": {
+    "album": 5,
+    "name": "Blissful",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0,
+    "caption": "",
+    "description": "",
+    "video_file_1": "http://www.quirksmode.org/html5/videos/big_buck_bunny.mp4",
+    "video_file_2": "http://www.quirksmode.org/html5/videos/big_buck_bunny.webm",
+    "poster": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Big_buck_bunny_poster_big.jpg",
+    "album_photo": false
+  },
+  "model": "media_albums.videofile",
+  "pk": 2
+},
+{
+  "fields": {
+    "album": 5,
+    "name": "Cheerful",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0,
+    "caption": "",
+    "description": "",
+    "video_file_1": "http://www.html5rocks.com/en/tutorials/video/basics/devstories.mp4",
+    "video_file_2": "http://www.html5rocks.com/en/tutorials/video/basics/devstories.webm",
+    "poster": "http://www.html5rocks.com/en/tutorials/video/basics/poster.png",
+    "album_photo": false
+  },
+  "model": "media_albums.videofile",
+  "pk": 3
+},
+{
+  "fields": {
+    "album": 7,
+    "name": "Some Video File",
+    "created": "2016-05-20T00:00:00",
+    "ordering": 0,
+    "caption": "",
+    "description": "",
+    "video_file_1": "http://html5demos.com/assets/dizzy.mp4",
+    "video_file_2": "",
+    "poster": "",
+    "album_photo": false
+  },
+  "model": "media_albums.videofile",
+  "pk": 4
+}
+]

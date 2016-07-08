@@ -1,0 +1,71 @@
+{% extends 'media_albums/base.html' %}
+
+{% load media_albums_tags %}
+{% load thumbnail %}
+
+{% block title %}Media Albums: {{ object.name }}{% endblock title %}
+
+{% block breadcrumbs %}
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="{% url 'list-albums' %}">Media Albums</a></li>
+    <li><a href="{% url 'show-album' object.album.slug %}">{{ object.album.name }}</a></li>
+    <li class="active">{{ object.name }}</li>
+  </ol>
+{% endblock breadcrumbs %}
+
+{% block media_albums_content %}
+  {% next_previous_object object as next_previous %}
+  <nav>
+    <ul class="pager">
+    <li class="previous">
+      <a href="{{ next_previous.previous.get_absolute_url }}"><span aria-hidden="true">&larr;</span> Previous</a>
+    </li>
+    <li class="next">
+      <a href="{{ next_previous.next.get_absolute_url }}">Next <span aria-hidden="true">&rarr;</span></a>
+    </li>
+    </ul>
+  </nav>
+
+  {% if object.is_photo %}
+    <div class="media-albums-photo">
+      {% thumbnail object.image.name "550x550" as im %}
+        <img src="{{ im.url }}" alt>
+      {% endthumbnail %}
+    </div>
+  {% elif object.is_video %}
+    <div class="media-albums-video">
+      <video controls{% if object.poster %} poster="{{ MEDIA_URL }}{{ object.poster }}"{% endif %}>
+        <source src="{{ MEDIA_URL }}{{ object.video_file_1 }}" type="{% get_mime_type object 'video_file_1' %}">
+        {% if object.video_file_2 %}
+          <source src="{{ MEDIA_URL }}{{ object.video_file_2 }}" type="{% get_mime_type object 'video_file_2' %}">
+        {% endif %}
+      </video>
+    </div>
+  {% elif object.is_audio %}
+    <div class="media-albums-audio">
+      <audio controls>
+        <source src="{{ MEDIA_URL }}{{ object.audio_file_1 }}" type="{% get_mime_type object 'audio_file_1' %}">
+        {% if object.audio_file_2 %}
+          <source src="{{ MEDIA_URL }}{{ object.audio_file_2 }}" type="{% get_mime_type object 'audio_file_2' %}">
+        {% endif %}
+      </audio>
+
+      {% if object.cover_art %}
+        {% thumbnail object.cover_art.name "550x550" as im %}
+          <img src="{{ im.url }}" alt class="media-albums-cover-art">
+        {% endthumbnail %}
+      {% endif %}
+    </div>
+  {% endif %}
+
+  {% if object.caption %}
+    <p class="media-albums-caption">{{ object.caption|urlize }}</p>
+  {% endif %}
+
+  {% if object.description %}
+    <div class="media-albums-item-description">
+      {{ object.description|linebreaksbr }}
+    </div>
+  {% endif %}
+{% endblock media_albums_content %}

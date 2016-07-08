@@ -1,0 +1,49 @@
+{% extends 'media_albums/base.html' %}
+
+{% load thumbnail %}
+
+{% block title %}Media Albums{% if is_paginated %}, page {{ page_obj.number }}{% endif %}{% endblock title %}
+
+{% block breadcrumbs %}
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="{% url 'list-albums' %}">Media Albums</a></li>
+    <li class="active">All Albums{% if is_paginated %}, page {{ page_obj.number }}{% endif %}</li>
+  </ol>
+{% endblock breadcrumbs %}
+
+{% block media_albums_content %}
+  {% if object_list %}
+    {% include 'media_albums/album_pagination.html' %}
+
+    {% for album in object_list %}
+      {% if forloop.counter0|divisibleby:'4' %}
+        {% if forloop.counter0 > 1 %}
+          </div>
+        {% endif %}
+
+        <div class="row media-albums-album-row">
+      {% endif %}
+
+      <div class="col-sm-3 media-albums-album-col">
+        <a href="{% url 'show-album' album.slug %}" class="thumbnail">
+          <div class="media-albums-album-photo">
+            {% thumbnail album.image.name "200x200" as im %}
+              <img src="{{ im.url }}" alt>
+            {% endthumbnail %}
+          </div>
+          <div class="media-albums-album-name">
+            {{ album.name }}
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+    </div>
+
+    {% include 'media_albums/album_pagination.html' %}
+  {% else %}
+    <div class="alert alert-info">
+      No albums are available.
+    </div>
+  {% endif %}
+{% endblock media_albums_content %}

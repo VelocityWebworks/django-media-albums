@@ -1,0 +1,65 @@
+{% extends 'media_albums/base.html' %}
+
+{% load thumbnail %}
+
+{% block title %}Media Albums: {{ album.name }}{% if is_paginated %}, page {{ page }}{% endif %}{% endblock title %}
+
+{% block breadcrumbs %}
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="{% url 'list-albums' %}">Media Albums</a></li>
+    <li class="active">{{ album.name }}{% if is_paginated %}, page {{ page }}{% endif %}</li>
+  </ol>
+{% endblock breadcrumbs %}
+
+{% block media_albums_content %}
+  {% if album.description %}
+    <div class="media-albums-album-description">
+      {{ album.description|linebreaksbr }}
+    </div>
+  {% endif %}
+
+  {% if items %}
+    {% include 'media_albums/item_pagination.html' %}
+
+    {% for item in items %}
+      {% if forloop.counter0|divisibleby:'4' %}
+        {% if forloop.counter0 > 1 %}
+          </div>
+        {% endif %}
+
+        <div class="row media-albums-item-row">
+      {% endif %}
+
+      <div class="col-sm-3 media-albums-item-col">
+        <a href="{{ item.get_absolute_url }}" class="thumbnail">
+          <div class="media-albums-item-photo">
+            {% if item.is_photo %}
+              {% thumbnail item.image.name "200x200" as im %}
+                <img src="{{ im.url }}" alt>
+              {% endthumbnail %}
+            {% elif item.is_audio and item.cover_art %}
+              {% thumbnail item.cover_art.name "200x200" as im %}
+                <img src="{{ im.url }}" alt>
+              {% endthumbnail %}
+            {% elif item.is_video and item.poster %}
+              {% thumbnail item.poster.name "200x200" as im %}
+                <img src="{{ im.url }}" alt>
+              {% endthumbnail %}
+            {% endif %}
+          </div>
+          <div class="media-albums-item-name">
+            {{ item.name }}
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+    </div>
+
+    {% include 'media_albums/item_pagination.html' %}
+  {% else %}
+    <div class="alert alert-info">
+      This album is empty.
+    </div>
+  {% endif %}
+{% endblock media_albums_content %}

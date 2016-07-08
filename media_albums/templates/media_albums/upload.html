@@ -1,0 +1,21 @@
+{% extends 'media_albums/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Upload a Photo{% endblock title %}
+
+{% block breadcrumbs %}
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="{% url 'list-albums' %}">Media Albums</a></li>
+    <li class="active">Upload a Photo</li>
+  </ol>
+{% endblock breadcrumbs %}
+
+{% block media_albums_content %}
+  <form action="." method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit" class="btn btn-primary">Upload Photo</button>
+  </form>
+{% endblock media_albums_content %}

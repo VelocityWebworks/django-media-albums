@@ -1,0 +1,2 @@
+recursive-include media_albums/static *
+recursive-include media_albums/templates *

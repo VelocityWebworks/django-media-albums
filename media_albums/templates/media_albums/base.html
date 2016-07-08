@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block extra_styles %}
+  <link href="{% static 'media_albums/styles/media_albums.css' %}" rel="stylesheet">
+{% endblock extra_styles %}
+
+{% block content %}
+  {% block breadcrumbs %}{% endblock breadcrumbs %}
+  {% block media_albums_content %}{% endblock media_albums_content %}
+{% endblock content %}

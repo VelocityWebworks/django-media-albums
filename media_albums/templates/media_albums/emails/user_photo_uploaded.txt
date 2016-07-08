@@ -1,0 +1,5 @@
+{% autoescape off %}
+A new photo has been uploaded by a user. You may move it to an album or remove it by visiting:
+
+{{ admin_url }}
+{% endautoescape %}

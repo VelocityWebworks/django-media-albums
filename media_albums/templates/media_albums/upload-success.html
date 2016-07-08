@@ -1,0 +1,18 @@
+{% extends 'media_albums/base.html' %}
+
+{% block title %}Media Albums: Photo Uploaded Successfully{% endblock title %}
+
+{% block breadcrumbs %}
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="{% url 'list-albums' %}">Media Albums</a></li>
+    <li><a href="{% url 'user-photo-upload' %}">Upload a Photo</a></li>
+    <li class="active">Photo Uploaded Successfully</li>
+  </ol>
+{% endblock breadcrumbs %}
+
+{% block media_albums_content %}
+  <div class="alert alert-success">
+    Thank you for submitting your photo. It will need to be approved before it shows up on the website.
+  </div>
+{% endblock media_albums_content %}

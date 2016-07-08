@@ -1,0 +1,7 @@
+*.pyc
+*.egg
+*.egg-info
+.tox/
+dist/
+media_albums/tests/media/
+venv-app/
