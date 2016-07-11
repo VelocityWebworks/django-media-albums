@@ -1,3 +1,5 @@
+from collections import OrderedDict
+
 try:
     from importlib import reload
 except ImportError:
@@ -58,11 +60,11 @@ class ViewsTest(TestCase):
         staff_user.is_staff = True
         staff_user.save()
 
-        self.user_types = {
-            'anonymous': None,
-            'normal': normal_credentials,
-            'staff': staff_credentials,
-        }
+        self.user_types = OrderedDict([
+            ('anonymous', None),
+            ('normal', normal_credentials),
+            ('staff', staff_credentials),
+        ])
 
     def test_list_albums(self):
         compute_settings()
