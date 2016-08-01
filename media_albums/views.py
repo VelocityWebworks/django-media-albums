@@ -4,8 +4,7 @@ from django.core.mail import send_mail
 from django.core.paginator import Paginator, InvalidPage
 from django.core.urlresolvers import reverse, reverse_lazy
 from django.http import Http404, HttpResponseRedirect
-from django.shortcuts import render_to_response
-from django.template import RequestContext
+from django.shortcuts import render
 from django.template.loader import render_to_string
 from django.utils.decorators import method_decorator
 from django.views.generic import DetailView, FormView, ListView, TemplateView
@@ -232,8 +231,4 @@ def show_album(
     if items.has_previous():
         context_data['previous'] = items.previous_page_number()
 
-    return render_to_response(
-        template_name,
-        context_data,
-        context_instance=RequestContext(request),
-    )
+    return render(request, template_name, context_data)
