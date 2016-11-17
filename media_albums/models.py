@@ -11,7 +11,7 @@ from .settings import MEDIA_ALBUMS_SETTINGS
 
 
 class Upload(models.Model):
-    album = models.ForeignKey('Album')
+    album = models.ForeignKey('Album', on_delete=models.CASCADE)
     name = models.CharField(_('name'), max_length=200)
     created = models.DateTimeField(_('created'), auto_now_add=True)
     ordering = models.IntegerField(
@@ -343,6 +343,7 @@ class Photo(Upload):
 class UserPhoto(Photo):
     added_by = models.ForeignKey(
         settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
         blank=True,
         null=True,
     )

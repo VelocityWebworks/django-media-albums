@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 
 from django.db import models, migrations
 from django.conf import settings
+import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
@@ -42,7 +43,7 @@ class Migration(migrations.Migration):
                 ('audio_file_2', models.FileField(help_text='Use this field to upload the same audio in ogg format. Having the same audio in a second format will allow more web browsers to be able to play the audio file.', upload_to=b'media_albums/%Y/%m/%d/audio', verbose_name='audio file 2', blank=True)),
                 ('cover_art', models.ImageField(help_text='The image to display below the audio player.', upload_to=b'media_albums/%Y/%m/%d/audio', verbose_name='cover art', blank=True)),
                 ('album_photo', models.BooleanField(default=False, help_text='Use the cover art as the album photo.', verbose_name='album photo')),
-                ('album', models.ForeignKey(to='media_albums.Album')),
+                ('album', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='media_albums.Album')),
             ],
             options={
                 'ordering': ('ordering', 'name'),
@@ -83,7 +84,7 @@ class Migration(migrations.Migration):
                 ('video_file_2', models.FileField(help_text='Use this field to upload the same video in webm format. Having the same video in a second format will allow more web browsers to be able to play the video file.', upload_to=b'media_albums/%Y/%m/%d/video', verbose_name='video file 2', blank=True)),
                 ('poster', models.ImageField(help_text="The image to use for the poster frame (the poster frame is what shows until the user plays or seeks). If you leave this blank, nothing is displayed until the video's first frame is available; then the first frame is shown as the poster frame.", upload_to=b'media_albums/%Y/%m/%d/video', verbose_name='poster', blank=True)),
                 ('album_photo', models.BooleanField(default=False, help_text='Use the poster as the album photo.', verbose_name='album photo')),
-                ('album', models.ForeignKey(to='media_albums.Album')),
+                ('album', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='media_albums.Album')),
             ],
             options={
                 'ordering': ('ordering', 'name'),
@@ -95,8 +96,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='UserPhoto',
             fields=[
-                ('photo_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='media_albums.Photo')),
-                ('added_by', models.ForeignKey(blank=True, to=settings.AUTH_USER_MODEL, null=True)),
+                ('photo_ptr', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, parent_link=True, auto_created=True, primary_key=True, serialize=False, to='media_albums.Photo')),
+                ('added_by', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, blank=True, to=settings.AUTH_USER_MODEL, null=True)),
             ],
             options={
                 'ordering': ('ordering', 'name'),
@@ -107,6 +108,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='photo',
             name='album',
-            field=models.ForeignKey(to='media_albums.Album'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='media_albums.Album'),
         ),
     ]
