@@ -1,4 +1,5 @@
 from itertools import chain
+from operator import attrgetter
 
 from django.conf import settings
 from django.core.exceptions import ValidationError
@@ -167,7 +168,10 @@ class Album(models.Model):
         if MEDIA_ALBUMS_SETTINGS['audio_files_enabled']:
             querysets.append(self.audiofile_set.all())
 
-        return list(chain(*querysets))
+        return sorted(
+            chain(*querysets),
+            key=attrgetter('ordering', 'name'),
+        )
 
 
 class AudioFile(Upload):

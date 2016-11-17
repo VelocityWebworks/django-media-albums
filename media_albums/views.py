@@ -177,25 +177,8 @@ def show_album(
     except Album.DoesNotExist:
         raise Http404
 
-    media_albums_objs = []
-
-    if MEDIA_ALBUMS_SETTINGS['photos_enabled']:
-        media_albums_objs.extend(
-            Photo.objects.filter(album=album).order_by('ordering', 'name')
-        )
-
-    if MEDIA_ALBUMS_SETTINGS['video_files_enabled']:
-        media_albums_objs.extend(
-            VideoFile.objects.filter(album=album).order_by('ordering', 'name')
-        )
-
-    if MEDIA_ALBUMS_SETTINGS['audio_files_enabled']:
-        media_albums_objs.extend(
-            AudioFile.objects.filter(album=album).order_by('ordering', 'name')
-        )
-
     paginator = Paginator(
-        media_albums_objs,
+        album.items,
         MEDIA_ALBUMS_SETTINGS['paginate_by'],
         allow_empty_first_page=True
     )

@@ -165,8 +165,8 @@ class ViewsTest(TestCase):
             if expected_status_code == 200:
                 items = response.context['items']
                 self.assertEqual(len(items), 2)
-                self.assertEqual(items[0].is_photo, True)
-                self.assertEqual(items[1].is_audio, True)
+                self.assertEqual(items[0].is_audio, True)
+                self.assertEqual(items[1].is_photo, True)
 
     @override_settings(MEDIA_ALBUMS={
         'photos_enabled': False,
@@ -233,9 +233,9 @@ class ViewsTest(TestCase):
             if expected_status_code == 200:
                 items = response.context['items']
                 self.assertEqual(len(items), 3)
-                self.assertEqual(items[0].is_photo, True)
-                self.assertEqual(items[1].is_video, True)
-                self.assertEqual(items[2].is_audio, True)
+                self.assertEqual(items[0].is_audio, True)
+                self.assertEqual(items[1].is_photo, True)
+                self.assertEqual(items[2].is_video, True)
 
     @override_settings(MEDIA_ALBUMS={
         'audio_files_enabled': True,
@@ -259,8 +259,8 @@ class ViewsTest(TestCase):
             if expected_status_code == 200:
                 items = response.context['items']
                 self.assertEqual(len(items), 2)
-                self.assertEqual(items[0].is_photo, True)
-                self.assertEqual(items[1].is_video, True)
+                self.assertEqual(items[0].is_audio, True)
+                self.assertEqual(items[1].is_photo, True)
 
     def test_show_audio(self):
         compute_settings()

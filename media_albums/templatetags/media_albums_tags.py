@@ -1,7 +1,6 @@
 from django import template
 
-from ..models import Album, AudioFile, Photo, VideoFile
-from ..settings import MEDIA_ALBUMS_SETTINGS
+from ..models import Album
 
 register = template.Library()
 
@@ -68,28 +67,8 @@ def get_album_items(album_name=None):
 def next_previous_object(media_albums_object):
     mao = media_albums_object
     album = mao.album
-    album_items = []
-
-    if MEDIA_ALBUMS_SETTINGS['photos_enabled']:
-        for obj in Photo.objects.filter(
-            album=album,
-        ).order_by('ordering', 'name'):
-            album_items.append(obj)
-
-    if MEDIA_ALBUMS_SETTINGS['video_files_enabled']:
-        for obj in VideoFile.objects.filter(
-            album=album,
-        ).order_by('ordering', 'name'):
-            album_items.append(obj)
-
-    if MEDIA_ALBUMS_SETTINGS['audio_files_enabled']:
-        for obj in AudioFile.objects.filter(
-            album=album,
-        ).order_by('ordering', 'name'):
-            album_items.append(obj)
-
+    album_items = album.items
     total_album_items = len(album_items)
-
     current_item_position = album_items.index(mao)
 
     if current_item_position + 1 < total_album_items:

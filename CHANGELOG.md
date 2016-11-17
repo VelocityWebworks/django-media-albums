@@ -4,6 +4,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Fixed
+- Previously, albums with multiple media types would always have photos first,
+  then video files, and then audio files, regardless of the values of the
+  `ordering` and `name` columns. Now it is possible for the media types to
+  appear in any order.
 - Added the `on_delete` argument to the foreign keys to fix a Django 1.10
   warning. For more information, see
   [the "ForeignKey and OneToOneField on_delete argument" section](https://docs.djangoproject.com/en/dev/releases/1.9/#foreignkey-and-onetoonefield-on-delete-argument)
