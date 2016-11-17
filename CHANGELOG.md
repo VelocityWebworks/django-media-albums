@@ -2,7 +2,7 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased]
+## [0.1.3] - 2016-11-17
 ### Fixed
 - Previously, albums with multiple media types would always have photos first,
   then video files, and then audio files, regardless of the values of the
