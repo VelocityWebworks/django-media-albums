@@ -1,5 +1,7 @@
 # Django Media Albums
 
+[![Build Status](https://travis-ci.org/VelocityWebworks/django-media-albums.svg?branch=master)](https://travis-ci.org/VelocityWebworks/django-media-albums)
+
 This app is used to create albums consisting of any combination of the
 following:
 
