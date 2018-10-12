@@ -11,7 +11,7 @@ following:
 
 This app also optionally allows regular (non-staff) users to upload photos.
 
-This app requires Django >= 1.8.
+This app requires Django 1.8, 1.9, 1.10, or 1.11.
 
 ## Installation
 
