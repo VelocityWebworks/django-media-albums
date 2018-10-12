@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import os
 import sys
 
@@ -7,7 +8,6 @@ from django.test.utils import get_runner
 
 BASE_DIR = os.path.join(
     os.path.dirname(os.path.abspath(__file__)),
-    'media_albums',
     'tests',
 )
 
@@ -20,7 +20,7 @@ settings.configure(
             'NAME': 'media_albums.sqlite3',
         }
     },
-    ROOT_URLCONF='media_albums.tests.urls',
+    ROOT_URLCONF='tests.urls',
     INSTALLED_APPS=(
         'django.contrib.admin',
         'django.contrib.auth',
@@ -67,14 +67,9 @@ settings.configure(
 )
 
 
-def runtests():
-    django.setup()
-    apps = sys.argv[1:] or ['media_albums', ]
-    TestRunner = get_runner(settings)
-    test_runner = TestRunner(verbosity=1, interactive=True, failfast=False)
-    failures = test_runner.run_tests(apps)
-    sys.exit(failures)
-
-
 if __name__ == '__main__':
-    runtests()
+    django.setup()
+    TestRunner = get_runner(settings)
+    test_runner = TestRunner()
+    failures = test_runner.run_tests(['tests'])
+    sys.exit(bool(failures))

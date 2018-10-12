@@ -8,10 +8,10 @@ from django.core.urlresolvers import NoReverseMatch, clear_url_caches, reverse
 from django.test import TestCase
 from django.test.utils import override_settings
 
-from ..models import Album, UserPhoto
+from media_albums.models import Album, UserPhoto
 
-from .. import admin as media_albums_admin
-from ..settings import compute_settings
+from media_albums import admin as media_albums_admin
+from media_albums.settings import compute_settings
 from . import urls as test_urls
 
 

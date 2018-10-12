@@ -1,9 +1,9 @@
 from django.test import TestCase
 from django.test.utils import override_settings
 
-from ..models import Album, AudioFile, VideoFile
-from ..templatetags import media_albums_tags
-from ..settings import compute_settings
+from media_albums.models import Album, AudioFile, VideoFile
+from media_albums.templatetags import media_albums_tags
+from media_albums.settings import compute_settings
 
 
 class TemplateTagsTest(TestCase):
