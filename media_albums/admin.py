@@ -117,6 +117,7 @@ class VideoFileAdmin(admin.ModelAdmin):
     ordering = ('album__ordering', 'album__name', 'ordering', 'name')
     form = VideoFileForm
 
+
 try:
     admin.site.register(Album, AlbumAdmin)
 except AlreadyRegistered:

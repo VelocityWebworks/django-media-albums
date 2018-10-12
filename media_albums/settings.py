@@ -27,4 +27,5 @@ def compute_settings():
     if hasattr(settings, 'MEDIA_ALBUMS'):
         MEDIA_ALBUMS_SETTINGS.update(settings.MEDIA_ALBUMS)
 
+
 compute_settings()
