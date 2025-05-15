@@ -11,6 +11,15 @@ from PIL import Image
 from .settings import MEDIA_ALBUMS_SETTINGS
 
 
+def get_format_text(extension):
+    extensions = extension.split(',')
+
+    if len(extensions) < 3:
+        return ' or '.join(extensions)
+
+    return ', '.join(extensions[:-1]) + ', or ' + extensions[-1]
+
+
 class Upload(models.Model):
     album = models.ForeignKey('Album', on_delete=models.CASCADE)
     name = models.CharField(_('name'), max_length=200)
@@ -193,7 +202,9 @@ class AudioFile(Upload):
         upload_to='media_albums/%Y/%m/%d/audio',
         help_text=(
             _('Use this field to upload the audio in %s format.') %
-            MEDIA_ALBUMS_SETTINGS['audio_files_format1_extension'].lower()
+            get_format_text(
+                MEDIA_ALBUMS_SETTINGS['audio_files_format1_extension'].lower()
+            )
         ),
     )
     audio_file_2 = models.FileField(
@@ -204,7 +215,9 @@ class AudioFile(Upload):
                 'Use this field to upload the same audio in %s format. Having '
                 'the same audio in a second format will allow more web '
                 'browsers to be able to play the audio file.'
-            ) % MEDIA_ALBUMS_SETTINGS['audio_files_format2_extension'].lower()
+            ) % get_format_text(
+                MEDIA_ALBUMS_SETTINGS['audio_files_format2_extension'].lower()
+            )
         ),
         blank=True,
     )
@@ -243,15 +256,22 @@ class AudioFile(Upload):
 
             if value:
                 actual_ext = value.name.rsplit('.', 1)[-1].lower()
-                expected_ext = MEDIA_ALBUMS_SETTINGS[
+                allowed_exts = MEDIA_ALBUMS_SETTINGS[
                     'audio_files_format%s_extension' % i
-                ].lower()
+                ].lower().split(',')
 
-                if actual_ext != expected_ext:
+                if actual_ext not in allowed_exts:
                     errors['audio_file_%s' % i] = _(
                         'The file you uploaded appears to be in %s format. It '
                         'needs to be in %s format.'
-                    ) % (actual_ext, expected_ext)
+                    ) % (
+                        actual_ext,
+                        get_format_text(
+                            MEDIA_ALBUMS_SETTINGS[
+                                'audio_files_format%s_extension' % i
+                            ].lower()
+                        )
+                    )
 
         if self.album_photo and not self.cover_art:
             errors['album_photo'] = _(
@@ -390,7 +410,9 @@ class VideoFile(Upload):
         upload_to='media_albums/%Y/%m/%d/video',
         help_text=(
             _('Use this field to upload the video in %s format.') %
-            MEDIA_ALBUMS_SETTINGS['video_files_format1_extension'].lower()
+            get_format_text(
+                MEDIA_ALBUMS_SETTINGS['video_files_format1_extension'].lower()
+            )
         ),
     )
     video_file_2 = models.FileField(
@@ -401,7 +423,9 @@ class VideoFile(Upload):
                 'Use this field to upload the same video in %s format. Having '
                 'the same video in a second format will allow more web '
                 'browsers to be able to play the video file.'
-            ) % MEDIA_ALBUMS_SETTINGS['video_files_format2_extension'].lower()
+            ) % get_format_text(
+                MEDIA_ALBUMS_SETTINGS['video_files_format2_extension'].lower()
+            )
         ),
         blank=True,
     )
@@ -445,15 +469,22 @@ class VideoFile(Upload):
 
             if value:
                 actual_ext = value.name.rsplit('.', 1)[-1].lower()
-                expected_ext = MEDIA_ALBUMS_SETTINGS[
+                allowed_exts = MEDIA_ALBUMS_SETTINGS[
                     'video_files_format%s_extension' % i
-                ].lower()
+                ].lower().split(',')
 
-                if actual_ext != expected_ext:
+                if actual_ext not in allowed_exts:
                     errors['video_file_%s' % i] = _(
                         'The file you uploaded appears to be in %s format. It '
                         'needs to be in %s format.'
-                    ) % (actual_ext, expected_ext)
+                    ) % (
+                        actual_ext,
+                        get_format_text(
+                            MEDIA_ALBUMS_SETTINGS[
+                                'video_files_format%s_extension' % i
+                            ].lower()
+                        )
+                    )
 
         if self.album_photo and not self.poster:
             errors['album_photo'] = _(

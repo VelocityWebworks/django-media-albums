@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [Unreleased]
+### Added
+- Added the ability to allow for multiple audio or video formats.
+
 ## [0.1.3] - 2016-11-17
 ### Fixed
 - Previously, albums with multiple media types would always have photos first,

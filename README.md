@@ -175,14 +175,14 @@ When set to `True`, albums may contain audio files.
 ### `audio_files_format1_extension` (default: `'mp3'`)
 
 When an audio file is uploaded, the "Audio file 1" field must have this
-extension. This setting is only relevant if `audio_files_enabled` is set to
-`True`.
+extension. To allow multiple extensions, make this string a comma separated
+list. This setting is only relevant if `audio_files_enabled` is set to `True`.
 
 ### `audio_files_format2_extension` (default: `'ogg'`)
 
 When an audio file is uploaded, the "Audio file 2" field must have this
-extension. This setting is only relevant if `audio_files_enabled` is set to
-`True`.
+extension. To allow multiple extensions, make this string a comma separated
+list. This setting is only relevant if `audio_files_enabled` is set to `True`.
 
 ### `audio_files_format2_required` (default: `False`)
 
@@ -196,14 +196,14 @@ When set to `True`, albums may contain video files.
 ### `video_files_format1_extension` (default: `'mp4'`)
 
 When a video file is uploaded, the "Video file 1" field must have this
-extension. This setting is only relevant if `video_files_enabled` is set to
-`True`.
+extension. To allow multiple extensions, make this string a comma separated
+list. This setting is only relevant if `video_files_enabled` is set to `True`.
 
 ### `video_files_format2_extension` (default: `'webm'`)
 
 When a video file is uploaded, the "Video file 2" field must have this
-extension. This setting is only relevant if `video_files_enabled` is set to
-`True`.
+extension. To allow multiple extensions, make this string a comma separated
+list. This setting is only relevant if `video_files_enabled` is set to `True`.
 
 ### `video_files_format2_required` (default: `False`)
 
