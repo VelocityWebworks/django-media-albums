@@ -195,13 +195,13 @@ When set to `True`, albums may contain video files.
 
 ### `video_files_format1_extension` (default: `'mp4'`)
 
-When an video file is uploaded, the "Video file 1" field must have this
+When a video file is uploaded, the "Video file 1" field must have this
 extension. This setting is only relevant if `video_files_enabled` is set to
 `True`.
 
 ### `video_files_format2_extension` (default: `'webm'`)
 
-When an video file is uploaded, the "Video file 2" field must have this
+When a video file is uploaded, the "Video file 2" field must have this
 extension. This setting is only relevant if `video_files_enabled` is set to
 `True`.
 
